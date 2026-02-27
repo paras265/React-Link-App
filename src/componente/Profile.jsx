@@ -1,6 +1,4 @@
 import React from "react";
-import profilePic from "/public/react.svg"
-import bgImage from "/public/professional-photo-background-zb0abc8ysodf81ui.jpg";
 import "./Profile.css";
 
 export default function Profile() {
@@ -14,11 +12,11 @@ export default function Profile() {
   return (
     <div
       className="d-flex justify-content-center align-items-center profile-container"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      style={{ backgroundImage: "url('/professional-photo-background-zb0abc8ysodf81ui.jpg')" }}
     >
       <div className="card shadow-lg p-4 text-center profile-card">
         <img
-          src={profilePic}
+          src="/react.svg"
           className="rounded-circle mx-auto mb-3 profile-img"
           alt="profile"
         />
