@@ -1,6 +1,6 @@
 import React from "react";
 import profilePic from "../assets/react.svg";
-import bgImage from "../assets/professional-photo-background-zb0abc8ysodf81ui.jpg";
+import bgImage from "/public/professional-photo-background-zb0abc8ysodf81ui.jpg";
 import "./Profile.css";
 
 export default function Profile() {
