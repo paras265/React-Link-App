@@ -1,5 +1,5 @@
 import React from "react";
-import profilePic from "../assets/react.svg";
+import profilePic from "/public/react.svg"
 import bgImage from "/public/professional-photo-background-zb0abc8ysodf81ui.jpg";
 import "./Profile.css";
 
