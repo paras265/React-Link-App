@@ -1,356 +1,401 @@
-/* ====================== MAIN CONTAINER ====================== */
-.profile-container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
-  position: relative;
-  overflow: hidden;
-  font-family: "Segoe UI", sans-serif;
-  color: white;
-  padding: 15px;
-  box-sizing: border-box;
-  flex-direction: column;
+/* ===== GLOBAL ===== */
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-/* ====================== BACKGROUND VIDEO ====================== */
-.background-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+background:#f5f5f7;
 }
 
-.video-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: -1;
+/* ===== CONTAINER ===== */
+
+.profile-container{
+width:100%;
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:flex-start;
+
+padding:40px;
+
 }
 
-/* ====================== CARD ====================== */
-.profile-card {
-  width: 380px;
-  max-width: 100%;
-  border-radius: 18px;
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
-  background: rgba(20, 20, 30, 0.6);
-  border: 1px solid rgba(0, 255, 255, 0.25);
-  box-shadow: 0 0 18px rgba(0, 255, 255, 0.4), inset 0 0 15px rgba(0, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 15px;
-  transition: 0.3s;
-  margin: 0 auto; /* center card horizontally on all screens */
-  color: #0055ff;
-  font-weight: 500;
-}
-/* ====================== ANIMATED BANNER ====================== */
-.profile-cover {
-  height: 120px;
-  background: linear-gradient(120deg, #00f2ff, #0055ff, #00f2ff);
-  background-size: 300% 300%;
-  animation: cyberGradient 6s infinite alternate;
+/* ===== CARD ===== */
+
+.profile-card{
+
+width:100%;
+max-width:1600px;
+background:white;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.08),
+0 2px 10px rgba(0,0,0,0.05);
+
+overflow:hidden;
+
+transition:0.3s;
+
 }
 
-@keyframes cyberGradient {
-  0% { background-position: 0%; }
-  100% { background-position: 100%; }
+.profile-card:hover{
+
+transform:translateY(-3px);
+
 }
 
-/* ====================== AVATAR ====================== */
-.profile-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px solid cyan;
-  margin-top: -50px;
-  box-shadow: 0 0 15px cyan, 0 0 30px cyan, 0 0 50px cyan;
-  animation: avatarGlow 3s infinite alternate;
+/* ===== HEADER ===== */
+
+.profile-cover{
+
+height:140px;
+
+background:linear-gradient(135deg,#0071e3,#00a2ff);
+
 }
 
-@keyframes avatarGlow {
-  from { box-shadow: 0 0 10px cyan, 0 0 20px cyan; }
-  to { box-shadow: 0 0 25px cyan, 0 0 50px cyan; }
+/* ===== AVATAR ===== */
+
+.profile-img{
+
+width:110px;
+height:110px;
+
+border-radius:50%;
+
+border:4px solid white;
+
+margin-top:-55px;
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
 }
 
-/* ====================== NAME & EMAIL ====================== */
-.card-body h4 {
-  color: #00f2ff;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-align: center;
-  margin: 6px 0;
+/* ===== BODY GRID ===== */
+
+.card-body{
+
+padding:30px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
 }
 
-.card-body p {
-  color: #aaa;
-  text-align: center;
-  font-size: 14px;
-  margin-bottom: 8px;
+/* ===== NAME ===== */
+
+.card-body h4{
+
+font-size:22px;
+font-weight:600;
+color:#1d1d1f;
+
 }
 
-/* ====================== WALLET BADGE ====================== */
-.wallet-badge {
-  display: inline-block;
-  padding: 5px 15px;
-  margin: 6px 0;
-  background: rgba(0, 255, 255, 0.15);
-  border: 1px solid cyan;
-  border-radius: 25px;
-  font-weight: 600;
-  color: #00f2ff;
-  box-shadow: 0 0 8px cyan;
+.card-body p{
+
+color:#6e6e73;
+font-size:14px;
+
 }
 
-/* ====================== PROFILE PROGRESS ====================== */
-.profile-progress {
-  margin-top: 12px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+/* ===== WALLET ===== */
+
+.wallet-badge{
+
+display:inline-block;
+
+margin-top:10px;
+
+padding:6px 16px;
+
+background:#f2f2f7;
+
+border-radius:20px;
+
+font-weight:600;
+
+color:#1d1d1f;
+
 }
 
-.progress-text {
-  font-size: 12px;
-  color: #aaa;
-  margin-bottom: 4px;
-  text-align: center;
+/* ===== INPUT ===== */
+
+.wallet-input{
+
+width:100%;
+
+padding:10px;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+margin-bottom:10px;
+
 }
 
-.progress {
-  height: 6px;
-  background: #222;
-  border-radius: 20px;
-  overflow: hidden;
+.wallet-input:focus{
+
+outline:none;
+
+border-color:#0071e3;
+
 }
 
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, cyan, blue, cyan);
-  box-shadow: 0 0 8px cyan;
+/* ===== BUTTONS ===== */
+
+.wallet-buttons{
+
+display:flex;
+gap:10px;
+
 }
 
-/* ====================== INFO GRID ====================== */
-.profile-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 12px;
-  padding: 0 10px;
+.wallet-buttons button{
+
+flex:1;
+
+border:none;
+
+padding:10px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:600;
+
 }
 
-.info-box {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  padding: 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  transition: 0.3s;
+.btn-success{
+
+background:#0071e3;
+color:white;
+
 }
 
-.info-box span {
-  display: block;
-  margin-top: 3px;
-  font-weight: 600;
-  color: #00f2ff;
+.btn-success:hover{
+
+background:#005ac1;
+
 }
 
-.info-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 12px cyan;
+.btn-warning{
+
+background:#f5f5f7;
+
 }
 
-/* ====================== EDIT ICON ====================== */
-.edit-icon {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  cursor: pointer;
-  font-size: 16px;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 6px 8px;
-  border-radius: 10px;
-  border: 1px solid cyan;
-  transition: 0.2s;
+.btn-warning:hover{
+
+background:#e5e5ea;
+
 }
 
-.edit-icon:hover {
-  background: cyan;
-  color: black;
-  box-shadow: 0 0 10px cyan;
+/* ===== ANALYTICS ===== */
+
+.wallet-analytics{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+font-size:14px;
+
+color:#6e6e73;
+
 }
 
-/* ====================== LOGOUT BUTTON ====================== */
-.btn-danger {
-  margin-top: 12px;
-  background: transparent;
-  border: 1px solid red;
-  color: red;
-  font-weight: 600;
-  border-radius: 10px;
-  transition: 0.3s;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding: 8px 0;
+/* ===== PROGRESS ===== */
+
+.progress{
+
+height:6px;
+background:#eee;
+border-radius:10px;
+
+overflow:hidden;
+
 }
 
-.btn-danger:hover {
-  background: red;
-  color: white;
-  box-shadow: 0 0 10px red;
+.progress-bar{
+
+height:100%;
+background:#0071e3;
+
 }
 
-/* ====================== RESPONSIVE FIXES ====================== */
+/* ===== INFO GRID ===== */
 
-/* ===== MOBILE DEVICES ===== */
-@media (max-width: 480px) {
-  .profile-container {
-    padding: 10px;
-    justify-content: center; /* vertical center */
-    align-items: center;     /* horizontal center */
-    height: 100vh;           /* full viewport height for vertical centering */
-  }
+.profile-info{
 
-  .profile-card {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto; /* center horizontally */
-    padding: 12px;
-  }
+grid-column:1/-1;
 
+display:grid;
 
-  .profile-cover {
-    height: 90px;
-  }
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 
-  .profile-img {
-    width: 80px;
-    height: 80px;
-    margin-top: -40px;
-  }
+gap:12px;
 
-  .card-body h4 {
-    font-size: 15px;
-    margin: 4px 0;
-  }
-
-  .card-body p {
-    font-size: 12px;
-    margin-bottom: 6px;
-  }
-
-  .wallet-badge {
-    font-size: 11px;
-    padding: 4px 10px;
-    margin-bottom: 8px;
-  }
-
-  .profile-progress {
-    margin-top: 8px;
-  }
-
-  .progress-text {
-    font-size: 11px;
-    margin-bottom: 3px;
-  }
-
-  .progress {
-    height: 5px;
-  }
-
-  .profile-info {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    margin-top: 8px;
-  }
-
-  .info-box {
-    padding: 6px;
-    font-size: 11px;
-  }
-
-  .info-box span {
-    margin-top: 2px;
-  }
-
-  .edit-icon {
-    top: 10px;
-    right: 10px;
-    font-size: 15px;
-    padding: 5px 6px;
-  }
-
-  .btn-danger {
-    width: 100%;
-    margin-top: 10px;
-    padding: 7px 0;
-  }
 }
 
-/* ===== TABLETS ===== */
-@media (min-width: 481px) and (max-width: 768px) {
+.info-box{
 
-  .profile-container {
-    justify-content: center; /* vertical center */
-    align-items: center;     /* horizontal center */
-    height: 100vh;           /* ensure vertical centering */
-  }
+background:#f5f5f7;
 
-  .profile-card {
-    width: 85%;
-    margin: 0 auto; /* center horizontally */
-  }
+padding:10px;
 
-  .profile-img {
-    width: 90px;
-    height: 90px;
-    margin-top: -45px;
-  }
+border-radius:10px;
 
-  .card-body h4 {
-    font-size: 16px;
-  }
+font-size:13px;
 
-  .card-body p {
-    font-size: 13px;
-  }
-
-  .profile-info {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
 }
 
-/* ===== LAPTOPS ===== */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .profile-container {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+.info-box span{
 
-  .profile-card {
-    width: 380px;
-    margin: 0 auto; /* center horizontally */
-  }
+display:block;
+
+margin-top:3px;
+
+font-weight:600;
+
+color:#1d1d1f;
+
+}
+
+/* ===== TRANSACTION ===== */
+
+.transaction-box{
+
+grid-column:1/-1;
+
+max-height:250px;
+
+overflow:auto;
+
+}
+
+.transaction-row{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:8px 0;
+
+border-bottom:1px solid #eee;
+
+font-size:14px;
+
+}
+
+/* ===== EDIT ICON ===== */
+
+.edit-icon{
+
+position:absolute;
+
+top:15px;
+
+right:15px;
+
+background:white;
+
+padding:6px 10px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+box-shadow:0 2px 6px rgba(0,0,0,.1);
+
+}
+
+/* ===== LOGOUT ===== */
+
+.btn-danger{
+
+grid-column:1/-1;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+background:#ff3b30;
+
+color:white;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+.btn-danger:hover{
+
+background:#e02a20;
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:600px){
+
+.profile-container{
+padding:10px;
+}
+
+.card-body{
+padding:20px;
+gap:20px;
+}
+
+.profile-cover{
+height:110px;
+}
+
+.profile-img{
+width:90px;
+height:90px;
+margin-top:-45px;
+}
+
+.wallet-buttons{
+flex-direction:column;
+}
+
 }
 
 /* ===== LARGE SCREENS ===== */
-@media (min-width: 1201px) {
-  .profile-container {
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
 
-  .profile-card {
-    width: 380px;
-    margin: 0 auto; /* center horizontally */
-  }
+@media(min-width:1400px){
+
+.profile-card{
+max-width:1400px;
+}
+
+.card-body{
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+}
+
 }
